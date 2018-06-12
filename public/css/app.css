@@ -10464,3 +10464,9 @@ body {
   color: inherit;
 }
 
+/* User register page */
+
+img.captcha {
+  cursor: pointer;
+}
+
