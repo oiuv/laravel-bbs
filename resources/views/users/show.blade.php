@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <div class="media row">
                         <div class="col-12">
-                            <img class="img-thumbnail img-fluid" src="{{ $user->gravatar(300) }}">
+                            <img class="img-thumbnail img-fluid" src="{{ $user->avatar }}" width="300px" height="300px">
                         </div>
                         <div class="media-body col-12">
                             <hr>
