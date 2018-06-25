@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use App\Handlers\ImageUploadHandler;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -59,6 +66,12 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        try {
+            $this->authorize('update', $user);
+        } catch (AuthorizationException $authorizationException) {
+            abort(403, '你无权访问本页面 T_T');
+        }
+
         return view('users.edit', compact('user'));
     }
 
@@ -71,6 +84,11 @@ class UsersController extends Controller
      */
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
+        try {
+            $this->authorize('update', $user);
+        } catch (AuthorizationException $authorizationException) {
+            abort(403, '你无权访问本页面 T_T');
+        }
         //dd($request->avatar);
         $data = $request->all();
 
