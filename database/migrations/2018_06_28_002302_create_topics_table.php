@@ -11,8 +11,8 @@ class CreateTopicsTable extends Migration
             $table->increments('id');
             $table->string('title')->index();
             $table->text('body');
-            $table->integer('user_id')->unsigned()->index()->nullable();
-            $table->integer('category_id')->unsigned()->index()->default(1);
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('category_id')->unsigned()->index();
             $table->integer('reply_count')->unsigned()->default(0);
             $table->integer('view_count')->unsigned()->default(0);
             $table->integer('last_reply_user_id')->unsigned()->default(0);
