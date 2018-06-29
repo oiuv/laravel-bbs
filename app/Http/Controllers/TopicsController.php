@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Topic;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
@@ -14,47 +15,68 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function index()
-	{
-		$topics = Topic::paginate();
-		return view('topics.index', compact('topics'));
-	}
+    public function index()
+    {
+        $topics = Topic::with('user', 'category')->paginate();
+        return view('topics.index', compact('topics'));
+    }
 
     public function show(Topic $topic)
     {
         return view('topics.show', compact('topic'));
     }
 
-	public function create(Topic $topic)
-	{
-		return view('topics.create_and_edit', compact('topic'));
-	}
+    public function create(Topic $topic)
+    {
+        return view('topics.create_and_edit', compact('topic'));
+    }
 
-	public function store(TopicRequest $request)
-	{
-		$topic = Topic::create($request->all());
-		return redirect()->route('topics.show', $topic->id)->with('message', 'Created successfully.');
-	}
+    public function store(TopicRequest $request)
+    {
+        $topic = Topic::create($request->all());
+        return redirect()->route('topics.show', $topic->id)->with('message', 'Created successfully.');
+    }
 
-	public function edit(Topic $topic)
-	{
-        $this->authorize('update', $topic);
-		return view('topics.create_and_edit', compact('topic'));
-	}
+    public function edit(Topic $topic)
+    {
+        try {
+            $this->authorize('update', $topic);
+        } catch (AuthorizationException $authorizationException) {
+            abort(403, '你无权编辑此文件。');
+        }
 
-	public function update(TopicRequest $request, Topic $topic)
-	{
-		$this->authorize('update', $topic);
-		$topic->update($request->all());
 
-		return redirect()->route('topics.show', $topic->id)->with('message', 'Updated successfully.');
-	}
+        return view('topics.create_and_edit', compact('topic'));
+    }
 
-	public function destroy(Topic $topic)
-	{
-		$this->authorize('destroy', $topic);
-		$topic->delete();
+    public function update(TopicRequest $request, Topic $topic)
+    {
+        try {
+            $this->authorize('update', $topic);
+        } catch (AuthorizationException $authorizationException) {
+            abort(403, '你无权编辑此文件。');
+        }
 
-		return redirect()->route('topics.index')->with('message', 'Deleted successfully.');
-	}
+        $topic->update($request->all());
+
+        return redirect()->route('topics.show', $topic->id)->with('message', 'Updated successfully.');
+    }
+
+    public function destroy(Topic $topic)
+    {
+        try {
+            $this->authorize('destroy', $topic);
+        } catch (AuthorizationException $authorizationException) {
+            abort(403, '你想干啥呢？');
+        }
+
+        try {
+            $topic->delete();
+        } catch (\Exception $exception) {
+            abort(500, '删除失败T_T');
+        }
+
+
+        return redirect()->route('topics.index')->with('message', 'Deleted successfully.');
+    }
 }
