@@ -10429,6 +10429,19 @@ body {
   margin-top: 0;
 }
 
+.navbar-static-top .dropdown-menu {
+  padding: 0;
+}
+
+.navbar-static-top .dropdown-menu a {
+  border-bottom: 1px solid #d8d8d8;
+  line-height: 2.4;
+}
+
+.navbar-static-top .dropdown-menu a .fa {
+  margin-right: 8px;
+}
+
 /* Sticky footer styles */
 
 html {
@@ -10474,6 +10487,28 @@ img.captcha {
 
 .users-show-page .user-info .thumbnail {
   margin-bottom: 0;
+}
+
+.users-show-page .nav-tabs {
+  margin-bottom: 20px;
+}
+
+.users-show-page .nav-tabs > li > a.active {
+  background-color: #fff;
+}
+
+.users-show-page .list-group .list-group-item {
+  border: none;
+  margin-bottom: 0;
+  border-bottom: 1px solid #efefef;
+}
+
+.users-show-page .list-group .list-group-item .meta {
+  color: #b3b3b3;
+}
+
+.users-show-page .pagination {
+  margin: 12px 0;
 }
 
 /* Topic Index Page */
