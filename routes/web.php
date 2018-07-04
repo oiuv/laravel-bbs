@@ -34,3 +34,5 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 $this->resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 $this->resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 $this->resource('categories', 'CategoriesController', ['only' => ['show']]);
+
+$this->post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
