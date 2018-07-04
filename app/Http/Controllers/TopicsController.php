@@ -52,8 +52,8 @@ class TopicsController extends Controller
             abort(403, '你无权编辑此文件。');
         }
 
-
-        return view('topics.create_and_edit', compact('topic'));
+        $categories = Category::all();
+        return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
     public function update(TopicRequest $request, Topic $topic)
