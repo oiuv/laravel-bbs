@@ -19,6 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "bootstrap": "^4.1.1"
+        "bootstrap": "^4.1.1",
+        "simditor": "^2.3.6"
     }
 }
