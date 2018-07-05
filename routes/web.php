@@ -32,7 +32,8 @@ $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 //Route::get('/home', 'HomeController@index')->name('home');
 
 $this->resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
-$this->resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+$this->resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
+$this->get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
 $this->resource('categories', 'CategoriesController', ['only' => ['show']]);
 
 $this->post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
