@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function root(){
+    public function root()
+    {
+        $app = app();
+        dd($app);
         return view('pages.root');
     }
 }
