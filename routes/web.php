@@ -38,3 +38,5 @@ $this->resource('categories', 'CategoriesController', ['only' => ['show']]);
 
 $this->post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
 $this->resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+
+$this->resource('notifications', 'NotificationsController', ['only' => ['index']]);

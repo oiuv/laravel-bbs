@@ -33,6 +33,14 @@
                             <span class="fa fa-plus" aria-hidden="true"></span>
                         </a>
                     </li>
+                    {{-- 消息通知标记 --}}
+                    <li class="nav-item">
+                        <a href="{{ route('notifications.index') }}" class="notifications-badge nav-link" >
+                            <span class="badge badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'fade' }} badge-pill" title="消息提醒">
+                                {{ Auth::user()->notification_count }}
+                            </span>
+                        </a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <img class="img-responsive img-circle" src="{{ Auth::user()->avatar }}" height="30px" width="30px">{{ Auth::user()->name }} <span class="caret"></span>
