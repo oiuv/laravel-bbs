@@ -6,7 +6,7 @@
                         style="color: #e27575;font-size: 14px;">❤</span>
             </div>
 
-            <div class="col text-right"><a href="mailto:i@oiuv.cn">联系我们</a></div>
+            <div class="col text-right"><a href="mailto:{{ setting('contact_email') }}">联系我们</a></div>
         </div>
     </div>
 </footer>
