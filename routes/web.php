@@ -40,3 +40,5 @@ $this->post('upload_image', 'TopicsController@uploadImage')->name('topics.upload
 $this->resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
 
 $this->resource('notifications', 'NotificationsController', ['only' => ['index']]);
+
+$this->get('permission-denied', 'PagesController@permissionDenied')->name('permission-denied');
