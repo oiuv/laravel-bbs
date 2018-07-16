@@ -56,7 +56,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-        
+
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => $db_config['host'],
