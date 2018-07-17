@@ -17,10 +17,10 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-		 \App\Models\Reply::class => \App\Policies\ReplyPolicy::class,
-		 \App\Models\Topic::class => \App\Policies\TopicPolicy::class,
-        'App\Model' => 'App\Policies\ModelPolicy',
-        User::class => UserPolicy::class
+        \App\Models\Reply::class => \App\Policies\ReplyPolicy::class,
+        \App\Models\Topic::class => \App\Policies\TopicPolicy::class,
+        //'App\Model' => 'App\Policies\ModelPolicy',
+        User::class => UserPolicy::class,
     ];
 
     /**
@@ -32,8 +32,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Horizon::auth(function ($request){
-            return Auth::user()->hasRole('Founder');
+        Horizon::auth(function ($request) {
+            if (Auth::user())
+                return Auth::user()->hasRole('Founder');
+            else
+                return false;
         });
     }
 }
