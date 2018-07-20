@@ -152,7 +152,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Frozennode\Administrator\AdministratorServiceProvider::class,
 
         /*
          * Application Service Providers...
