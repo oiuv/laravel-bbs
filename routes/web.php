@@ -42,4 +42,4 @@ $this->resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 
 $this->resource('notifications', 'NotificationsController', ['only' => ['index']]);
 
-$this->get('permission-denied', 'PagesController@permissionDenied')->name('permission-denied');
+$this->get('permission-denied', 'PagesController@permissionDenied')->name('admin');
