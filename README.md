@@ -55,7 +55,7 @@ $ php artisan migrate --seed
 | [spatie/laravel-permission](https://github.com/spatie/laravel-permission) | 角色权限管理 | 角色和权限控制 |
 | [mewebstudio/Purifier](https://github.com/mewebstudio/Purifier) | 用户提交的 Html 白名单过滤 | 帖子内容的 Html 安全过滤，防止 XSS 攻击 |
 | [hieu-le/active](https://github.com/letrunghieu/active) | 选中状态 | 顶部导航栏选中状态 |
-| [z-song/laravel-admin](https://github.com/summerblue/administrator) | 管理后台 | 模型管理后台、配置信息管理后台 |
+| [z-song/laravel-admin](https://github.com/z-song/laravel-admin) | 管理后台 | 模型管理后台、配置信息管理后台 |
 | [viacreative/sudo-su](https://github.com/viacreative/sudo-su) | 用户切换 | 开发环境中快速切换登录账号 |
 | [laravel/horizon](https://github.com/laravel/horizon) | 队列监控 | 队列监控命令与页面控制台 /horizon |
 
