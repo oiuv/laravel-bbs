@@ -2,7 +2,7 @@
 
 ## 开发环境部署/安装
 
-本项目代码使用 PHP 框架 [Laravel 5.6](https://laravel.com/docs/5.6) 开发，本地开发环境使用 [Laravel Valet](https://laravel.com/docs/5.6/valet)。
+本项目代码使用 PHP 框架 [Laravel 5.7](https://laravel.com/docs/5.7) 开发，本地开发环境使用 [Laravel Valet](https://laravel.com/docs/5.7/valet)。
 
 
 ### 基础安装
