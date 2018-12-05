@@ -17,12 +17,14 @@ class UsersTableSeeder extends Seeder
 
         // 头像假数据
         $avatars = [
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/Lhd1SHqu86.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200',
-            'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/NDnzMutoxX.png?imageView2/1/w/200/h/200',
+            'https://via.placeholder.com/200x200/333/333',
+            'https://via.placeholder.com/200x200/339/339',
+            'https://via.placeholder.com/200x200/393/393',
+            'https://via.placeholder.com/200x200/399/399',
+            'https://via.placeholder.com/200x200/933/933',
+            'https://via.placeholder.com/200x200/939/939',
+            'https://via.placeholder.com/200x200/993/993',
+            'https://via.placeholder.com/200x200/999/999',
         ];
 
         // 生成数据集合

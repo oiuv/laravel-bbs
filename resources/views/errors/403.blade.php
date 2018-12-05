@@ -1,22 +1,11 @@
-@extends('layouts.app')
+@extends('errors::illustrated-layout')
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">权限不足</div>
+@section('code', '403')
+@section('title', __('Forbidden'))
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        {{ $exception->getMessage() }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+@section('image')
+<div style="background-image: url({{ asset('/svg/403.svg') }});" class="absolute pin bg-cover bg-no-repeat md:bg-left lg:bg-center">
+</div>
 @endsection
+
+@section('message', __($exception->getMessage() ?: __('Sorry, you are forbidden from accessing this page.')))

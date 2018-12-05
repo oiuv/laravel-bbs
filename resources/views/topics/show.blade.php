@@ -37,7 +37,11 @@
                         ⋅
                         <span class="fa fa-comment" aria-hidden="true"></span>
                         {{ $topic->reply_count }}
+                        ⋅
+                        {{ $topic->visits()->count() }} 阅读
                     </div>
+
+                    <hr>
 
                     <div class="topic-body">
                         {!! $topic->body !!}

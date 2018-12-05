@@ -16,7 +16,8 @@
                             {{ $topic->title }}
                         </a>
                         <a class="float-right" href="{{ $topic->link() }}" >
-                            <span class="badge"> {{ $topic->reply_count }} </span>
+                            <span class="fa fa-eye" title="阅读"> {{ $topic->visits()->count() }}</span>
+                            <span class="fa fa-commenting" title="回复"> {{ $topic->reply_count }}</span>
                         </a>
                     </div>
 

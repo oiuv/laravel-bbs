@@ -1,22 +1,11 @@
-@extends('layouts.app')
+@extends('errors::illustrated-layout')
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">404 错误</div>
+@section('code', '404')
+@section('title', __('Page Not Found'))
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        你要访问的页面去旅游啦 T_T
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+@section('image')
+<div style="background-image: url({{ asset('/svg/404.svg') }});" class="absolute pin bg-cover bg-no-repeat md:bg-left lg:bg-center">
+</div>
 @endsection
+
+@section('message', __('Sorry, the page you are looking for could not be found.'))
